@@ -3,7 +3,7 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-
+# pairs that are passed as a dropdown
 pairs=[
     [
         r"my name is (.*)",
@@ -83,15 +83,24 @@ pairs=[
 
 @app.route('/')
 def home():
+    """
+    This function directs to html page
+    """
     return render_template('index.html')
 
 @app.route('/chat')
 def chat():
+    """
+    This function generates QA bot
+    """
     user_message = request.args.get('msg')
     response = get_bot_response(user_message)
     return str(response)
 
 def get_bot_response(user_message):
+    """
+    This function enables pair of the chat as a predefined messages
+    """
     chat = Chat(pairs, reflections)
     return chat.respond(user_message)
 
