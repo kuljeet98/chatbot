@@ -19,7 +19,7 @@ pairs=[
     ],
     [
         r"(.*) created (.*) ?",
-        ["Radhika created me using Python's NLTK library for Webinar 1 ",]
+        ["BITS created me using Python's NLTK library for Webinar 1 ",]
     ],
     [
         r"sorry (.*)",
